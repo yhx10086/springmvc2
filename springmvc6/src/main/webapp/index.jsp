@@ -2,5 +2,6 @@
 <html>
 <body>
 <a href="login">login</a>
+<a href="ListAdmin">list by page</a>
 </body>
 </html>

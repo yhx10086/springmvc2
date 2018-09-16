@@ -8,6 +8,7 @@
     <modules>
         <module>../springmvc2</module>
         <module>../springmvc4</module>
+        <module>../springmvc6</module>
     </modules>
     <name>springmvc1 Maven Webapp</name>
     <url>http://maven.apache.org</url>
