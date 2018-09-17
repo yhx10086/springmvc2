@@ -1,6 +1,7 @@
 package cap.test;
 
 
+import cap.mapper.ArticleMapper;
 import cap.model.Article;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -40,6 +41,32 @@ public class MyBatisTest {
             e.printStackTrace();
         }
 
+    }
+
+    @Test
+    public void testSelectAllArticle() {
+        SqlSession session = sessionFactory.openSession();
+        ArticleMapper articleMapper = session.getMapper(ArticleMapper.class);
+        List<Article> articleList = articleMapper.selectAllArticle();
+        for (Article article : articleList) {
+            System.out.println(article.getTitle());
+        }
+
+    }
+
+    @Test
+    public void testDeleteArticle() {
+        SqlSession session = sessionFactory.openSession();
+        ArticleMapper articleMapper = session.getMapper(ArticleMapper.class);
+        articleMapper.deleteArticle(13);
+        session.commit();
+    }
+
+    public void testUpdateArticle() {
+        SqlSession session = sessionFactory.openSession();
+        ArticleMapper articleMapper = session.getMapper(ArticleMapper.class);
+        articleMapper.insertArticle();
+        session.commit();
     }
 
 
